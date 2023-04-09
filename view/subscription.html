@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/assets/style/subscription_style.css">
+    <script type="text/javascript" src="/services/function.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <div class="product">
+        <div id="skin_img" class="hidden">
+          <img id="img_src" src="">
+        </div>
+        <div class="description">
+          <label for="minecraft_username" id="username_label">Veuillez entrer votre nom d'utilisateur minecraft pour continuer</label>
+          <input name="minecraft_username" type="text" placeholder="">
+        </div>
+      </div>
+      
+      <form id="skin_btn" onsubmit="return false;">
+        <button onclick="getSkin(document.querySelector('input').value)" type="submit">Suivant</button>
+      </form>
+      <div id="stripe_btn" class="hidden" onclick="redirectToCheckout()" method="POST">
+        <button type="submit" id="checkout-button">Passer au paiement</button>
+      </div>
+    </section>
+  </div>
+
+  </body>
+
+</html>
